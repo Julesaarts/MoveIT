@@ -1,0 +1,27 @@
+﻿@page
+@model MoveIT.Pages.Employee.AddModel
+@{
+	//41.20
+	ViewData["Title"] = "Add Employee";
+}
+
+<h2>Add Ride</h2>
+
+<form method="post">
+	<div asp-validation-summary="All" class="text-danger"></div>
+
+	<div class="form-group">
+		<label asp-for="Employee.Name" class="control-label"></label>
+		<input asp-for="Employee.Name" class="form-control" />
+		<span asp-validation-for="Employee.Name" class="text-danger"></span>
+	</div>
+
+	<button type="submit" class="btn btn-primary">Medewerker toevoegen</button>
+	<a asp-page="/Employees/Index" class="btn btn-secondary">Cancel</a>
+
+</form>
+
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+}
+
