@@ -33,5 +33,14 @@ namespace Core.Domain
 
         //Method
         //public bool RequestRide(ride.Date)
+
+        //public bool RequestsPassengerTransport(VehicleType vehicle)
+        //{
+        //    if (vehicle == "PassengerTransport")
+        //    {
+        //        return true;
+        //    }
+        //    return false;
+        //}
     }
 }

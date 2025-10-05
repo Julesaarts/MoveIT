@@ -8,7 +8,7 @@ namespace MoveIT.Models
 
         //onderstaande is nodig om velden te connecten met de Page class
         [Required]
-        [StringLength(maximumLength: 100, MinimumLength = 3)]
+        [StringLength(maximumLength: 50, MinimumLength = 3)]
         public string Name { get; private set; }
     }
 }

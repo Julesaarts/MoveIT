@@ -16,6 +16,10 @@ namespace Core.Domain
         public string Password { get; private set; }
 
         //Constructor
+        public Employee(string name)
+        {
+            Name = name;
+        }
         public Employee(string name, string login, string password)
         {
             Name = name;

@@ -11,10 +11,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Folder Include="Helpers\Mappers\" />
     <Folder Include="Pages\Customer\" />
     <Folder Include="Pages\Vehicle\" />
-    <Folder Include="Pages\Ride\" />
   </ItemGroup>
 
   <ItemGroup>
