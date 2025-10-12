@@ -9,8 +9,8 @@ namespace MoveIT.Models
         //public int Id { get; private set; }
 
         //onderstaande is nodig om velden te connecten met de Page class
-        [Required(ErrorMessage = "Please enter the date of the ride.")]
-        public Date Date { get; set; }
+        //[Required(ErrorMessage = "Please enter the date of the ride.")]
+        //public Date Date { get; set; }
 
         [Required]
         [Range(0, 10000)]
@@ -22,9 +22,8 @@ namespace MoveIT.Models
         [Display(Name = "Price")]
         public int Price { get; set; }
 
-        [Required]
         [Display(Name = "Ongoing")]
-        public int Ongoing { get; set; }
+        public bool Ongoing { get; set; }
     }
 }
 

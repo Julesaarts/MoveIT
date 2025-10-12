@@ -21,14 +21,14 @@ namespace Infrastructure.DataAccess
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT Date, Distance, Price, Ongoing FROM ride", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT Distance, Price, Ongoing FROM ride", conn);
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
                         RideDTO ride = new RideDTO()
                         {
-                            Date = reader.GetDateTime(0),
+                            //Date = reader.GetDateTime(0),
                             Distance = reader.GetInt32(1),
                             Price = reader.GetInt32(2),
                             Ongoing = reader.GetBoolean(3)

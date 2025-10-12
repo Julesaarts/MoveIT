@@ -18,15 +18,14 @@ namespace Core.Domain
         public Systemo(string name)
         {
             Name = name;
-            RideRepository rideRepository = new RideRepository();
-            List<RideDTO> data = rideRepository.GetRides();
-            foreach (RideDTO rideDTO in data)
-            {
-                Ride ride = new Ride(rideDTO.Date, rideDTO.Distance, rideDTO.Price, rideDTO.Ongoing);
-                _rides.Add(ride);
-            }
-        }
-
-        
+            //RideRepository rideRepository = new RideRepository();
+            //List<RideDTO> data = rideRepository.GetRides();
+            //foreach (RideDTO rideDTO in data)
+            //{
+            //    Ride ride = new Ride(//rideDTO.Date,
+            //                         rideDTO.Distance, rideDTO.Price, rideDTO.Ongoing);
+            //    _rides.Add(ride);
+            //}
+        } 
     }
 }

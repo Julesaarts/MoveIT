@@ -12,15 +12,16 @@ namespace Core.Domain
         //Property
         public int Id { get; private set; }
             //Use DateTime for date and time representation in .NET
-        public DateTime Date { get; private set; }
+        //public DateTime Date { get; private set; }
         public int Distance { get; private set; }
         public int Price { get; private set; }
         public bool Ongoing { get; private set; }
 
         //Constructor
-        public Ride(DateTime date, int distance, int price, bool ongoing)
+        public Ride(//DateTime date,
+                    int distance, int price, bool ongoing)
         {
-            Date = date;
+            //Date = date;
             Distance = distance;
             Price = price;
             Ongoing = ongoing;

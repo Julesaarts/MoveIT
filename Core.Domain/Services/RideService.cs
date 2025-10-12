@@ -8,7 +8,8 @@ using System.Threading.Tasks;
 
 namespace Core.Domain.Services
 {
-    internal class RideService
+    //in 'services' heb je typische Use Cases
+    public class RideService
     {
         public void AddRide(Ride ride)
         {
@@ -19,11 +20,22 @@ namespace Core.Domain.Services
             RideRepository repository = new RideRepository();
             repository.AddRide(new RideDTO()
             {
-                Date = ride.Date,
                 Distance = ride.Distance,
                 Price = ride.Price,
                 Ongoing = ride.Ongoing
             });
         }
+        public List<Ride> GetRides()
+        {
+            RideRepository repository = new RideRepository();
+            List<RideDTO> rideDTOs = repository.GetRides();
+            List<Ride> rides = new List<Ride>();
+            foreach (RideDTO rideDTO in rideDTOs)
+            {
+                rides.Add(new Ride(rideDTO.Distance, rideDTO.Price, rideDTO.Ongoing));
+            }
+            return rides;
+        }
+        
     }
 }
