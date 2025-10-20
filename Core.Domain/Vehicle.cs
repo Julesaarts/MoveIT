@@ -34,6 +34,11 @@ namespace Core.Domain
         //return newDepreciation
         //}
 
-        //public bool usableForRide(ride.date)
+        public bool usableForRide(Ride ride)
+        {
+            if (ride.Ongoing == false)
+                return true;
+            return false;
+        }
     }
 }

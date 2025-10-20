@@ -77,8 +77,6 @@ namespace Infrastructure.DataAccess
         public void AddRide(RideDTO rideDTO)
         {
             //ToDo: Insert data into database
-        }
-
-        
+        } 
     }
 }

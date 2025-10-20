@@ -7,8 +7,6 @@
             //ToDo: Validate if name (or whatever) is unique (or whatever)
             //If employee exists, throw exeption
             //Else add ride
-
-            
         }
     }
 }

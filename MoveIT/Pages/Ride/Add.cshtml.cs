@@ -6,7 +6,7 @@ using MoveIT.Models;
 
 namespace MoveIT.Pages.Ride
 {
-    public class AddModel : PageModel
+    public class AddPackageRidedModel : PageModel
     {
         [BindProperty]
         public RideModel Ride { get; set; } = new();
