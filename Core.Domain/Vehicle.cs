@@ -34,11 +34,11 @@ namespace Core.Domain
         //return newDepreciation
         //}
 
-        public bool usableForRide(Ride ride)
-        {
-            if (ride.Ongoing == false)
-                return true;
-            return false;
-        }
+        //public bool usableForRide(Ride ride)
+        //{
+        //    if (ride.Ongoing == false)
+        //        return true;
+        //    return false;
+        //}
     }
 }

@@ -6,7 +6,7 @@ Console.WriteLine("Goedemiddag");
 Systemo ritten = new Systemo("Ritten");
 foreach (Ride ride in ritten.Rides)
 {
-    Console.WriteLine($"Date: {ride.Date}, Distance: {ride.Distance}, Price: {ride.Price}, Ongoing: {ride.Ongoing}");
+    Console.WriteLine($"Distance: {ride.Distance}, Price: {ride.Price}");
 }
 
 Console.WriteLine("press key");

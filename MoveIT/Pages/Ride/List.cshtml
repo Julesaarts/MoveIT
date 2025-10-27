@@ -5,5 +5,34 @@
 	ViewData["Title"] = "Ride List";
 }
 
-<h2>Hey </h2>
-<h2>test</h2>
+<h1>@ViewData["Title"]</h1>
+
+<p>Overzicht van de geboekte ritten:</p>
+
+
+@if (Model.Rides?.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Afstand</th>
+                <th>Prijs</th>
+@*                 <th>Minimum Length (cm)</th>
+                <th>Maximum Length (cm)</th> *@
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var ride in Model.Rides)
+            {
+                <tr>
+                    <td>@ride.Distance</td>
+                    <td>@ride.Price</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No rides available.</p>
+}

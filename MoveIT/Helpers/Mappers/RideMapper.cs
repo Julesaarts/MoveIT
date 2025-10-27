@@ -11,8 +11,8 @@ namespace MoveIT.Helpers.Mappers
             return new Ride(
                 //rideModel.Date,
                 rideModel.Distance,
-                rideModel.Price,
-                rideModel.Ongoing);
+                rideModel.Price
+                /*rideModel.Ongoing*/);
         }
     }
 }

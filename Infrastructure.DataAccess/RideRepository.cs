@@ -31,13 +31,12 @@ namespace Infrastructure.DataAccess
                             //Date = reader.GetDateTime(0),
                             Distance = reader.GetInt32(1),
                             Price = reader.GetInt32(2),
-                            Ongoing = reader.GetBoolean(3)
+                            //Ongoing = reader.GetBoolean(3)
                         };
                         rides.Add(ride);
                     }
                 }
             }
-
             return rides;
         }
 

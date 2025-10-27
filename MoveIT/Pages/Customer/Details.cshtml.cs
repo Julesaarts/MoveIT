@@ -1,15 +1,14 @@
 using Core.Domain.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
-using MoveIT.Helpers.Mappers;
 using MoveIT.Models;
 
-namespace MoveIT.Pages.Ride
+namespace MoveIT.Pages.Customer
 {
-    public class AddPackageRidedModel : PageModel
+    public class DetailsModel : PageModel
     {
         [BindProperty]
-        public RideModel Ride { get; set; } = new();
+        public CustomerModel Customer { get; set; } = new();
         public void OnGet()
         {
         }
@@ -22,23 +21,23 @@ namespace MoveIT.Pages.Ride
                 return Page();
             }
 
-            RideService service = new RideService();
+            //CustomerService service = new CustomerService();
 
-            try
-            {
-                service.AddRide(Ride.Map());
-            }
-            catch (Exception ex)
-            {
-                ModelState.AddModelError(string.Empty, "We were unable to process your request");
-                return Page();
-            }
+            //try
+            //{
+            //    service.AddRide(Ride.Map());
+            //}
+            //catch (Exception ex)
+            //{
+            //    ModelState.AddModelError(string.Empty, "We were unable to process your request");
+            //    return Page();
+            //}
 
             //de regel hieronder wordt vervangen door de regel hierboven (maar zeker wanneer er meer gemapt wordt, kan dat allemaal onder mapping worden geplaatst, is overzichtelijker)
             //service.AddRide(new Core.Domain.Ride(Ride.Distance, Ride.Price, Ride.Ongoing));
 
 
-            return RedirectToPage("List");
+            return RedirectToPage("/Ride/Add");
         }
     }
 }

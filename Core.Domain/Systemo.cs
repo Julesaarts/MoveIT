@@ -26,6 +26,6 @@ namespace Core.Domain
             //                         rideDTO.Distance, rideDTO.Price, rideDTO.Ongoing);
             //    _rides.Add(ride);
             //}
-        } 
+        }
     }
 }

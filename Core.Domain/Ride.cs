@@ -19,7 +19,9 @@ namespace Core.Domain
         //public DateTime Date { get; private set; }
         public int Distance { get; private set; }
         public int Price { get; private set; }
-        public bool Ongoing { get; private set; }
+        //public bool Ongoing { get; private set; }
+
+
         //onderstaande 3-slash comments krijg je wanneer je 3x '/' typt direct methode, klasse, property of constructor hangt
         /// <summary>
         /// 
@@ -31,7 +33,7 @@ namespace Core.Domain
 
         //Constructor
         public Ride(//DateTime date,
-                    int distance, int price, bool ongoing)
+                    int distance, int price/*, bool ongoing*/)
         {
             //Voorbeeld van Validatie in de domain laag
             //ToDo: add more validation
@@ -40,11 +42,10 @@ namespace Core.Domain
                 throw new ArgumentException("Distance cant be less than 0.", nameof(distance));
             }
 
-
             //Date = date;
             Distance = distance;
             Price = price;
-            Ongoing = ongoing;
+            //Ongoing = ongoing;
         }
 
         //Method

@@ -26,8 +26,3 @@ namespace MoveIT.Models
         public bool Ongoing { get; set; }
     }
 }
-
-//    Date = date;
-//    Distance = distance;
-//    Price = price;
-//    Ongoing = ongoing;
