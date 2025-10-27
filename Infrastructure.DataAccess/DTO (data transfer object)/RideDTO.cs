@@ -10,7 +10,7 @@ namespace Infrastructure.DataAccess.DTO__data_transfer_object_
     {
         //hier halen we data uit onze database
         //het is niet de verantwoordelijkheid voor dit object om de data te controleren. omdat de data uit de database al correct moet zijn.
-        //het is al gecontroleerd door de core laag.
+        //het is al gecontroleerd door de core laag (toen deze werd opgeslagen?)
 
         //public DateTime Date { get; set; }
         public int Distance { get; set; }

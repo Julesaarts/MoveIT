@@ -11,6 +11,8 @@ namespace Core.Domain.Services
     //in 'services' heb je typische Use Cases
     public class RideService
     {
+        //public omdat we er vanuit de UI bij willen
+        //hier komen rides van de UI laag binnen
         public void AddRide(Ride ride)
         {
             //ToDo: Validate if date (or whatever) is unique (or whatever)
@@ -25,6 +27,8 @@ namespace Core.Domain.Services
                 //Ongoing = ride.Ongoing
             });
         }
+
+        //hiermee halen we rides op uit de database en returnen die naar de UI laag
         public List<Ride> GetRides()
         {
             RideRepository repository = new RideRepository();

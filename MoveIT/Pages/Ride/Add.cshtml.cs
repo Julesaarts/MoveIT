@@ -26,6 +26,7 @@ namespace MoveIT.Pages.Ride
 
             try
             {
+                //hier wordt de mapping gedaan van RideModel (UI laag) naar Ride (Core Domain laag)
                 service.AddRide(Ride.Map());
             }
             catch (Exception ex)
@@ -36,7 +37,6 @@ namespace MoveIT.Pages.Ride
 
             //de regel hieronder wordt vervangen door de regel hierboven (maar zeker wanneer er meer gemapt wordt, kan dat allemaal onder mapping worden geplaatst, is overzichtelijker)
             //service.AddRide(new Core.Domain.Ride(Ride.Distance, Ride.Price, Ride.Ongoing));
-
 
             return RedirectToPage("List");
         }

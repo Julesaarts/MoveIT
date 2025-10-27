@@ -11,24 +11,24 @@ namespace Core.Domain
         //Field
         private int _id;
         private string _name;
-        private string _address;
         private int _phone;
+        private string _email;
 
         //Property
         public string Name { get { return _name; } }
-        public string Address { get { return _address; } }
         public int Phone { get { return _phone; } }
+        public string Email { get { return _email; } }
 
         //Constructor
         public Customer()
         { }
 
         //Constructor Overloading
-        public Customer(string Name, string Address, int Phone)
+        public Customer(string Name, int Phone, string Email)
         {
             _name = Name;
-            _address = Address;
             _phone = Phone;
+            _email = Email;
         }
 
         //Method
