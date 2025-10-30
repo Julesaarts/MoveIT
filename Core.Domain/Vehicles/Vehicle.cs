@@ -4,18 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Domain
+namespace Core.Domain.Vehicles
 {
-    public class Vehicle
+    public abstract class Vehicle
     {
         //Auto-property (dat is de field en property in 1 (zie customer.cs voor gescheidde variant))
-        public int Id { get; private set; }
-        public string LicensePlate { get; private set; }
+        public int Id { get; }
+        public string LicensePlate { get; }
         public int Mileage { get; private set; }
         public float Depreciation { get; private set; }
-
-        //vehicle type toevoegen?
-        //Dat zou dan een aparte klasse worden.
+        public bool IsAvailable { get; private set; }
 
         //Constructor
         public Vehicle(string licensePlate, int mileage, float depreciation)
@@ -24,6 +22,10 @@ namespace Core.Domain
             Mileage = mileage;
             Depreciation = depreciation;
         }
+
+        public abstract int CalculateDepreciation();
+
+
 
         //Method
         //ToDo: nog methods toevoegen

@@ -13,6 +13,8 @@ namespace Core.Domain.Services
     {
         //public omdat we er vanuit de UI bij willen
         //hier komen rides van de UI laag binnen
+
+        //we kunnen hier validatie doen, met bijvoorbeeld RideResult teruggeven (of nieuw/ander result object)
         public void AddRide(Ride ride)
         {
             //ToDo: Validate if date (or whatever) is unique (or whatever)
@@ -29,7 +31,7 @@ namespace Core.Domain.Services
         }
 
         //hiermee halen we rides op uit de database en returnen die naar de UI laag
-        public List<Ride> GetRides()
+        public IReadOnlyList<Ride> GetRides()
         {
             RideRepository repository = new RideRepository();
             List<RideDTO> rideDTOs = repository.GetRides();

@@ -4,11 +4,11 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Core.Domain
+namespace Core.Domain.Vehicles
 {
     public enum VehicleType
     {
-        PassengerTransport,
-        FreightTransport
+        Taxi,
+        Truck
     }
 }

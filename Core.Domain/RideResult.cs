@@ -7,6 +7,7 @@ using System.Threading.Tasks;
 namespace Core.Domain
 {
     //Doel van deze klasse is om de UI te informeren over wat er precies fout gaat.
+    //Duidelijk voorbeeld van een single responsibility class
     public class RideResult
     {
         public bool Success { get; private set; }
@@ -14,7 +15,7 @@ namespace Core.Domain
 
 
         /// <summary>
-        /// Succesful customer in vehicle //mag ok iets anders zijn
+        /// Succesful customer in vehicle //mag ook iets anders zijn
         /// </summary>
         public RideResult()
         {
@@ -22,9 +23,8 @@ namespace Core.Domain
             ErrorMessage = string.Empty;
         }
 
-
         /// <summary>
-        /// Unsuccessful customer in vehicle //mag ok iets anders zijn
+        /// Unsuccessful customer in vehicle //mag ook iets anders zijn
         /// </summary>
         /// <param name="success"></param>
         /// <param name="errorMessage"></param>

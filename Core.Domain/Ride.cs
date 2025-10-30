@@ -15,7 +15,7 @@ namespace Core.Domain
 
         //Property
         public int Id { get; private set; }
-            //Use DateTime for date and time representation in .NET
+        //Use DateTime for date and time representation in .NET
         //public DateTime Date { get; private set; }
         public int Distance { get; private set; }
         public int Price { get; private set; }
@@ -37,6 +37,8 @@ namespace Core.Domain
         {
             //Voorbeeld van Validatie in de domain laag
             //ToDo: add more validation
+            //Waarom gebruiken we niet RideResult hier? omdat we in de constructor van een object geen return type kunnen zetten (zoals bij methodes)
+            //Gebruik exceptions in exceptionele gevallen. In voorspelbare gevallen (zoals user input) kun je beter result objecten gebruiken
             if (distance < 2)
             {
                 throw new ArgumentException("Distance cant be less than 0.", nameof(distance));
@@ -49,7 +51,19 @@ namespace Core.Domain
         }
 
         //Method
-        //public float CalculatePrice(Vehicle.type)
-        //CompleteRide
+        public double CalculatePrice(int distance)
+        {
+            double price = 10 + (distance * 0.12);
+            return price;
+        }
+
+        public RideResult CompleteRide()
+        {
+            if (/*Ongoing == false*/ true)
+            {
+                return new RideResult("Ride is already completed.");
+            }
+            return new RideResult();
+        }
     }
 }
