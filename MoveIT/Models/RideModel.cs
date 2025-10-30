@@ -18,6 +18,10 @@ namespace MoveIT.Models
         public int Distance { get; set; }
 
         [Required]
+        [Range(1, 4)]
+        [Display(Name = "Number of people")]
+        public int NumberOfPeople { get; set; }
+
         [Range(0, 10000)]
         [Display(Name = "Price")]
         public int Price { get; set; }

@@ -1,0 +1,44 @@
+﻿@page
+@model MoveIT.Pages.Ride.AddPackageRidedModel
+@{
+	//41.20
+	ViewData["Title"] = "Add Taxi Ride";
+}
+
+<h2>Add Ride</h2>
+
+<form method="post"> @* de method 'post' is het sturen van de data *@
+
+	<div asp-validation-summary="All" class="text-danger"></div>
+
+	<div class="form-group">
+		<label asp-for="Ride.Distance" class="control-label"></label>
+		<input asp-for="Ride.Distance" class="form-control" />
+		<span asp-validation-for="Ride.Distance" class="text-danger"></span>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="Ride.NumberOfPeople" class="control-label"></label>
+		<input asp-for="Ride.NumberOfPeople" class="form-control" />
+		<span asp-validation-for="Ride.NumberOfPeople" class="text-danger"></span>
+	</div>
+
+	<div class="form-group">
+		<label asp-for="Ride.Price" class="control-label"></label>
+		<input asp-for="Ride.Price" class="form-control" />
+		<span asp-validation-for="Ride.Price" class="text-danger"></span>
+	</div>
+
+@* 	<div class="form-group form-check">
+		<input asp-for="Ride.Ongoing" class="form-check-input" type="checkbox" />
+		<label asp-for="Ride.Ongoing" class="form-check-label"></label>
+	</div> *@
+
+	<button type="submit" class="btn btn-primary">Ride toevoegen</button>
+	<a asp-page="/Index" class="btn btn-secondary">Cancel</a>
+
+</form>
+
+@section Scripts {
+	<partial name="_ValidationScriptsPartial" />
+}

@@ -32,7 +32,7 @@ namespace Core.Domain
 
         //Constructor
         public Ride(//DateTime date,
-                    int distance, int price/*, bool ongoing*/)
+                    int distance, int price /*, bool ongoing*/)
         {
             //Voorbeeld van Validatie in de domain laag
             //ToDo: add more validation
