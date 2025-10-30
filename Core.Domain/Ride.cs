@@ -14,7 +14,6 @@ namespace Core.Domain
         //private readonly List<Passengers> _passengers = new List<Passengers>();
 
         //Property
-        public int Id { get; private set; }
         //Use DateTime for date and time representation in .NET
         //public DateTime Date { get; private set; }
         public int Distance { get; private set; }

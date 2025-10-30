@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Core.Domain.Helpers;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,11 @@ namespace Core.Domain.Vehicles
             throw new NotImplementedException();
         }
 
+        public void UpdateDepreciation(double baseValue)
+        {
+            // Gebruik de helper om afschrijving te berekenen
+            this.Depreciation = (float)TaxiHelper.CalculateTaxiDeprecation(baseValue, this.Mileage);
+        }
 
     }
 }

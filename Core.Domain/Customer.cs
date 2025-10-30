@@ -9,7 +9,6 @@ namespace Core.Domain
     public class Customer
     {
         //Field
-        private int _id;
         private string _name;
         private int _phone;
         private string _email;

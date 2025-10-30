@@ -12,7 +12,7 @@ namespace Core.Domain.Vehicles
         public int Id { get; }
         public string LicensePlate { get; }
         public int Mileage { get; private set; }
-        public float Depreciation { get; private set; }
+        public float Depreciation { get; protected set; }
         public bool IsAvailable { get; private set; }
 
         //Constructor
