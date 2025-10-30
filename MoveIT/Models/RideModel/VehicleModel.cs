@@ -2,9 +2,9 @@
 using System.ComponentModel.DataAnnotations;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 
-namespace MoveIT.Models
+namespace MoveIT.Models.RideModel
 {
-    public class RideModel
+    public class VehicleModel
     {
         //public int Id { get; private set; }
 
@@ -16,11 +16,6 @@ namespace MoveIT.Models
         [Range(0, 10000)]
         [Display(Name = "Distance")]
         public int Distance { get; set; }
-
-        [Required]
-        [Range(1, 4)]
-        [Display(Name = "Number of people")]
-        public int NumberOfPeople { get; set; }
 
         [Range(0, 10000)]
         [Display(Name = "Price")]

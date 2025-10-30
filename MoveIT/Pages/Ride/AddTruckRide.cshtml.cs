@@ -2,14 +2,14 @@ using Core.Domain.Services;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using MoveIT.Helpers.Mappers;
-using MoveIT.Models;
+using MoveIT.Models.RideModel;
 
 namespace MoveIT.Pages.Ride
 {
     public class AddTruckRideModel : PageModel
     {
         [BindProperty]
-        public RideModel Ride { get; set; } = new();
+        public TruckModel Ride { get; set; } = new();
         public void OnGet()
         {
         }

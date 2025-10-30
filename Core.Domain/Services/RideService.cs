@@ -26,6 +26,7 @@ namespace Core.Domain.Services
             {
                 Distance = ride.Distance,
                 Price = ride.Price,
+                Persons = ride.Persons
                 //Ongoing = ride.Ongoing
             });
         }
@@ -38,7 +39,7 @@ namespace Core.Domain.Services
             List<Ride> rides = new List<Ride>();
             foreach (RideDTO rideDTO in rideDTOs)
             {
-                rides.Add(new Ride(rideDTO.Distance, rideDTO.Price /*rideDTO.Ongoing*/ ));
+                rides.Add(new Ride(rideDTO.Distance, rideDTO.Price, rideDTO.Persons /*rideDTO.Ongoing*/ ));
             }
             return rides;
         }

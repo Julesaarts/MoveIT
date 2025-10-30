@@ -15,6 +15,7 @@ namespace Infrastructure.DataAccess.DTO__data_transfer_object_
         //public DateTime Date { get; set; }
         public int Distance { get; set; }
         public int Price { get; set; }
+        public int Persons { get; set; }
         //public bool Ongoing { get; set; }
     }
 }

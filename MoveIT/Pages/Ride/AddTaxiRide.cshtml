@@ -1,11 +1,11 @@
 ﻿@page
-@model MoveIT.Pages.Ride.AddPackageRidedModel
+@model MoveIT.Pages.Ride.AddTaxiRideModel
 @{
 	//41.20
 	ViewData["Title"] = "Add Taxi Ride";
 }
 
-<h2>Add Ride</h2>
+<h2>Add Taxi Ride</h2>
 
 <form method="post"> @* de method 'post' is het sturen van de data *@
 
@@ -18,9 +18,9 @@
 	</div>
 
 	<div class="form-group">
-		<label asp-for="Ride.NumberOfPeople" class="control-label"></label>
-		<input asp-for="Ride.NumberOfPeople" class="form-control" />
-		<span asp-validation-for="Ride.NumberOfPeople" class="text-danger"></span>
+		<label asp-for="Ride.Persons" class="control-label"></label>
+		<input asp-for="Ride.Persons" class="form-control" />
+		<span asp-validation-for="Ride.Persons" class="text-danger"></span>
 	</div>
 
 	<div class="form-group">

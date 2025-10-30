@@ -26,7 +26,7 @@ namespace Core.Domain.Vehicles
         public void UpdateDepreciation(double baseValue)
         {
             // Gebruik de helper om afschrijving te berekenen
-            this.Depreciation = (float)TaxiHelper.CalculateTaxiDeprecation(baseValue, this.Mileage);
+            Value = (float)TaxiHelper.CalculateTaxiDeprecation(baseValue, Mileage);
         }
 
     }

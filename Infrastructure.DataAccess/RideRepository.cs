@@ -13,6 +13,7 @@ namespace Infrastructure.DataAccess
 {
     public class RideRepository
     {
+        //ophalen van alle ritten uit de database
         public List<RideDTO> GetRides()
         {
             List<RideDTO> rides = new List<RideDTO>();
@@ -21,16 +22,19 @@ namespace Infrastructure.DataAccess
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT Distance, Price FROM ride", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT Distance, price, Persons FROM ride", conn);
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
                     {
                         RideDTO ride = new RideDTO()
                         {
+                            //Alle NULLs in de database opvangen en vervangen door 0
+
                             //Date = reader.GetDateTime(0),
-                            Distance = reader.GetInt32(0),
-                            Price = reader.GetInt32(1),
+                            Distance = reader.IsDBNull(0) ? 0 : reader.GetInt32(0),
+                            Price = reader.IsDBNull(1) ? 0 : reader.GetInt32(1),
+                            Persons = reader.IsDBNull(2) ? 0 : reader.GetInt32(2)
                             //Ongoing = reader.GetBoolean(3)
                         };
                         rides.Add(ride);
@@ -70,6 +74,8 @@ namespace Infrastructure.DataAccess
         //};
         //    return rides;
 
+
+        //toevoegen van een rit aan de database
         public void AddRide(RideDTO rideDTO)
         {
             string connectionString = "Server=localhost;Database=moveit;User ID=root;Password=Superman2910891!;";
@@ -78,23 +84,23 @@ namespace Infrastructure.DataAccess
             {
                 conn.Open();
 
-                // ✅ Eerst controleren of deze rit al bestaat
-                string checkQuery = "SELECT COUNT(*) FROM ride WHERE Distance = @Distance AND Price = @Price";
-                using (MySqlCommand checkCmd = new MySqlCommand(checkQuery, conn))
-                {
-                    checkCmd.Parameters.AddWithValue("@Distance", rideDTO.Distance);
-                    checkCmd.Parameters.AddWithValue("@Price", rideDTO.Price);
+                // Eerst controleren of deze rit al bestaat
+                //string checkQuery = "SELECT COUNT(*) FROM ride WHERE Distance = @Distance AND Price = @Price";
+                //using (MySqlCommand checkCmd = new MySqlCommand(checkQuery, conn))
+                //{
+                //    checkCmd.Parameters.AddWithValue("@Distance", rideDTO.Distance);
+                //    checkCmd.Parameters.AddWithValue("@Price", rideDTO.Price);
 
-                    int count = Convert.ToInt32(checkCmd.ExecuteScalar());
+                //    int count = Convert.ToInt32(checkCmd.ExecuteScalar());
 
-                    if (count > 0)
-                    {
-                        // Deze rit bestaat al → niets doen
-                        return;
-                    }
-                }
+                //    if (count > 0)
+                //    {
+                //        // Deze rit bestaat al → niets doen
+                //        return;
+                //    }
+                //}
 
-                // 🚀 Nog niet in de database → voeg toe
+                // Nog niet in de database, dan toevoegen
                 string insertQuery = "INSERT INTO ride (Distance, Price) VALUES (@Distance, @Price)";
                 using (MySqlCommand insertCmd = new MySqlCommand(insertQuery, conn))
                 {

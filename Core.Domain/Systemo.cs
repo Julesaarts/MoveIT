@@ -10,14 +10,14 @@ namespace Core.Domain
 {
     public class Systemo
     {
-        private List<Ride> _rides = new();
+        //private List<Ride> _rides = new();
 
-        public IReadOnlyList<Ride> Rides { get { return _rides; } }
-        public string Name { get; private set; }
+        //public IReadOnlyList<Ride> Rides { get { return _rides; } }
+        //public string Name { get; private set; }
 
-        public Systemo(string name)
-        {
-            Name = name;
+        //public Systemo(string name)
+        //{
+        //    Name = name;
             //RideRepository rideRepository = new RideRepository();
             //List<RideDTO> data = rideRepository.GetRides();
             //foreach (RideDTO rideDTO in data)
@@ -26,6 +26,6 @@ namespace Core.Domain
             //                         rideDTO.Distance, rideDTO.Price, rideDTO.Ongoing);
             //    _rides.Add(ride);
             //}
-        }
+        //}
     }
 }

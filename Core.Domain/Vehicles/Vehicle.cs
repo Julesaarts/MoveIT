@@ -9,10 +9,9 @@ namespace Core.Domain.Vehicles
     public abstract class Vehicle
     {
         //Auto-property (dat is de field en property in 1 (zie customer.cs voor gescheidde variant))
-        public int Id { get; }
         public string LicensePlate { get; }
         public int Mileage { get; private set; }
-        public float Depreciation { get; protected set; }
+        public float Value { get; protected set; }
         public bool IsAvailable { get; private set; }
 
         //Constructor
@@ -20,7 +19,7 @@ namespace Core.Domain.Vehicles
         {
             LicensePlate = licensePlate;
             Mileage = mileage;
-            Depreciation = depreciation;
+            Value = depreciation;
         }
 
         public abstract int CalculateDepreciation();
@@ -29,7 +28,7 @@ namespace Core.Domain.Vehicles
 
         //Method
         //ToDo: nog methods toevoegen
-        // public float CalculateDepreciation(Depreciation)
+        // public float CalculateDepreciation(Value)
         //{
         //float newDepreciation = 0;
         //if blablabla

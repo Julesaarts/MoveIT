@@ -18,6 +18,7 @@ namespace Core.Domain
         //public DateTime Date { get; private set; }
         public int Distance { get; private set; }
         public int Price { get; private set; }
+        public int Persons { get; private set; }
         //public bool Ongoing { get; private set; }
 
 
@@ -28,17 +29,18 @@ namespace Core.Domain
         /// <param name="distance"></param>
         /// <param name="price"></param>
         /// <param name="ongoing"></param>
+        /// <param name="persons"></param> 
         /// <exception cref="ArgumentException">Throws ArgumentException when invalid distance filled in</exception>
 
         //Constructor
         public Ride(//DateTime date,
-                    int distance, int price /*, bool ongoing*/)
+                    int distance, int price, int persons /*, bool ongoing*/)
         {
             //Voorbeeld van Validatie in de domain laag
             //ToDo: add more validation
             //Waarom gebruiken we niet RideResult hier? omdat we in de constructor van een object geen return type kunnen zetten (zoals bij methodes)
             //Gebruik exceptions in exceptionele gevallen. In voorspelbare gevallen (zoals user input) kun je beter result objecten gebruiken
-            if (distance < 2)
+            if (distance < 0)
             {
                 throw new ArgumentException("Distance cant be less than 0.", nameof(distance));
             }
@@ -46,6 +48,7 @@ namespace Core.Domain
             //Date = date;
             Distance = distance;
             Price = price;
+            Persons = persons;
             //Ongoing = ongoing;
         }
 
