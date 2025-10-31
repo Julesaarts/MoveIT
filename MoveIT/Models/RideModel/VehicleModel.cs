@@ -20,8 +20,5 @@ namespace MoveIT.Models.RideModel
         [Range(0, 10000)]
         [Display(Name = "Price")]
         public int Price { get; set; }
-
-        [Display(Name = "Ongoing")]
-        public bool Ongoing { get; set; }
     }
 }

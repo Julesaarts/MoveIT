@@ -13,20 +13,20 @@ namespace Core.Domain.Vehicles
         public int PassengerCapacity { get; private set; }
 
         //Constructor voor Taxi, erft van Vehicle, inclusief nieuwe property
-        public Taxi(string licensePlate, int mileage, float depreciation, int passengerCapacity) : base(licensePlate, mileage, depreciation)
+        public Taxi(string type, int kmDriven, int value, string licensePlate, int passengerCapacity) : base(type, kmDriven, value, licensePlate)
         {
             PassengerCapacity = passengerCapacity;
         }
 
-        public override int CalculateDepreciation()
-        {
-            throw new NotImplementedException();
-        }
+        //public override int CalculateDepreciation()
+        //{
+        //    throw new NotImplementedException();
+        //}
 
         public void UpdateDepreciation(double baseValue)
         {
             // Gebruik de helper om afschrijving te berekenen
-            Value = (float)TaxiHelper.CalculateTaxiDeprecation(baseValue, Mileage);
+            //Value = (float)TaxiHelper.CalculateTaxiDeprecation(baseValue, Mileage);
         }
 
     }

@@ -18,11 +18,11 @@ namespace Infrastructure.DataAccess
         {
             List<RideDTO> rides = new List<RideDTO>();
 
-            string connectionString = "Server=localhost;Database=moveit;User ID=root;Password=Superman2910891!;";
+            string connectionString = $"Server=localhost;Database=moveit;User ID=root;Password={ww.DbPassword};";
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
                 conn.Open();
-                MySqlCommand cmd = new MySqlCommand("SELECT Distance, price, Persons FROM ride", conn);
+                MySqlCommand cmd = new MySqlCommand("SELECT Distance, Price, Persons FROM ride", conn);
                 using (MySqlDataReader reader = cmd.ExecuteReader())
                 {
                     while (reader.Read())
@@ -78,7 +78,7 @@ namespace Infrastructure.DataAccess
         //toevoegen van een rit aan de database
         public void AddRide(RideDTO rideDTO)
         {
-            string connectionString = "Server=localhost;Database=moveit;User ID=root;Password=Superman2910891!;";
+            string connectionString = $"Server=localhost;Database=moveit;User ID=root;Password={ww.DbPassword};";
 
             using (MySqlConnection conn = new MySqlConnection(connectionString))
             {
@@ -101,11 +101,12 @@ namespace Infrastructure.DataAccess
                 //}
 
                 // Nog niet in de database, dan toevoegen
-                string insertQuery = "INSERT INTO ride (Distance, Price) VALUES (@Distance, @Price)";
+                string insertQuery = "INSERT INTO ride (Distance, Price, Persons) VALUES (@Distance, @Price, @Persons)";
                 using (MySqlCommand insertCmd = new MySqlCommand(insertQuery, conn))
                 {
                     insertCmd.Parameters.AddWithValue("@Distance", rideDTO.Distance);
                     insertCmd.Parameters.AddWithValue("@Price", rideDTO.Price);
+                    insertCmd.Parameters.AddWithValue("@Persons", rideDTO.Persons);
 
                     insertCmd.ExecuteNonQuery();
                 }

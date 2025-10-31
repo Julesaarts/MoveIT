@@ -59,6 +59,33 @@ namespace Core.Domain
             return price;
         }
 
+        //temporary method to make the other constructor work
+        //REMOVE LATER!
+        public Ride(//DateTime date,
+                    int distance, int price/*, bool ongoing*/)
+        {
+            //Voorbeeld van Validatie in de domain laag
+            //ToDo: add more validation
+            //Waarom gebruiken we niet RideResult hier? omdat we in de constructor van een object geen return type kunnen zetten (zoals bij methodes)
+            //Gebruik exceptions in exceptionele gevallen. In voorspelbare gevallen (zoals user input) kun je beter result objecten gebruiken
+            if (distance < 0)
+            {
+                throw new ArgumentException("Distance cant be less than 0.", nameof(distance));
+            }
+
+            //Date = date;
+            Distance = distance;
+            Price = price;
+            //Ongoing = ongoing;
+        }
+
+        //Method
+        public double CalculatePricez(int distance)
+        {
+            double price = 10 + (distance * 0.12);
+            return price;
+        }
+
         public RideResult CompleteRide()
         {
             if (/*Ongoing == false*/ true)

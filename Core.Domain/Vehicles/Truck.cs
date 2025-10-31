@@ -13,16 +13,15 @@ namespace Core.Domain.Vehicles
         public int MaxWeight { get; private set; }
 
         // Constructor voor Truck, inclusief nieuwe properties
-        public Truck(string licensePlate, int mileage, float depreciation, int maxCapacity, int maxWeight) :
-            base(licensePlate, mileage, depreciation)
+        public Truck(string type, int kmDriven, int value, string licensePlate, int maxCapacity, int maxWeight) : base(type, kmDriven, value, licensePlate)
         {
             MaxCapacity = maxCapacity;
             MaxWeight = maxWeight;
         }
 
-        public override int CalculateDepreciation()
-        {
-            throw new NotImplementedException();
-        }
+        //public override int CalculateDepreciation()
+        //{
+        //    throw new NotImplementedException();
+        //}
     }
 }

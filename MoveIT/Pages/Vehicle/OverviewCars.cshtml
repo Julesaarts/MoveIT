@@ -6,3 +6,32 @@
 <h1>@ViewData["Title"]</h1>
 
 <p>Overzicht van de auto's</p>
+
+@if (Model.Vehicles?.Count > 0)
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>type</th>
+                <th>kmDriven</th>
+                <th>value</th>
+                <th>licensePlate</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var vehicle in Model.Vehicles)
+            {
+                <tr>
+                    <th>@vehicle.Type</th>
+                    <th>@vehicle.KmDriven</th>
+                    <th>@vehicle.Value</th>
+                    <th>@vehicle.LicensePlate</th>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+else
+{
+    <p>No rides available.</p>
+}
